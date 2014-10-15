@@ -1,0 +1,16 @@
+{
+  "name": "purescript-enchantjs",
+  "version": "0.0.1",
+  "description": "PureScript interface for Enchant.js.",
+  "main": "",
+  "private": true,
+  "author": "Masahiro Yamauchi",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-execute": "~0.1.5",
+    "grunt-purescript": "~0.5.0"
+  }
+}

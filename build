@@ -1,0 +1,5 @@
+#!/bin/bash
+DIR=`pwd`
+BIN_DIR=$DIR/.cabal-sandbox/bin
+echo $PATH | grep $BIN_DIR || export PATH="$BIN_DIR:$PATH"
+grunt
