@@ -5,9 +5,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     libFiles: [
-      "src/**/*.purs",
+      "src/Enchant/*.purs",
       "bower_components/purescript-*/src/**/*.purs"
     ],
+
+    clean: ["output"],
 
     psc: {
       options: {
@@ -15,16 +17,20 @@ module.exports = function(grunt) {
         modules: ["Main"]
       },
       all: {
-        src: ["<%=libFiles%>"],
+        src: ["<%=libFiles%>", "src/Main.purs"],
         dest: "js/index.js"
       }
     },
+
+    pscMake: ["<%=libFiles%>"],
 
     dotPsci: ["<%=libFiles%>"]
 
   });
 
+  grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-purescript");
 
-  grunt.registerTask("default", ["psc:all", "dotPsci"]);
+  grunt.registerTask("main", ["psc:all"]);
+  grunt.registerTask("default", ["pscMake", "dotPsci"]);
 };
