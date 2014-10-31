@@ -15,6 +15,7 @@ grunt
 After building you can see enchant example page.
 
 ```
+grunt main
 wget https://raw.githubusercontent.com/wise9/enchant.js/master/images/chara1.png
 open index.html
 ```
