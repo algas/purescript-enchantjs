@@ -1,10 +1,11 @@
 {
   "name": "purescript-enchantjs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PureScript interface for Enchant.js.",
   "keywords": ["purescript"],
   "ignore": [
     "**/.*",
+    "src/Main.purs",
     "bower_components",
     "node_modules",
     "output",
