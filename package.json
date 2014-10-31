@@ -1,6 +1,5 @@
 {
   "name": "purescript-enchantjs",
-  "version": "0.0.3",
   "description": "PureScript interface for Enchant.js.",
   "main": "",
   "private": true,
