@@ -22,3 +22,6 @@ wget -O js/enchant.js https://raw.githubusercontent.com/uei/enchant.js-builds/ma
 wget https://raw.githubusercontent.com/wise9/enchant.js/master/images/chara1.png
 open index.html
 ```
+
+Another example is here
+[https://github.com/algas/purescript-enchantjs-example](https://github.com/algas/purescript-enchantjs-example)
