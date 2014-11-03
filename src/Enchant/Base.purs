@@ -51,6 +51,8 @@ foreign import data EnchantEventTarget :: *
 
 foreign import data EnchantGroup :: *
 
+foreign import data EnchantInput :: *
+
 foreign import data EnchantInputManager :: *
 
 foreign import data EnchantInputSource :: *

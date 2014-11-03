@@ -35,6 +35,9 @@ getFrame = ffi ["core", ""] "core.frame;"
 setFrame :: forall eff. EnchantCore -> Number -> Eff (e :: Enchant | eff) Unit
 setFrame = fpi ["core", "n", ""] "core.frame = n;"
 
+getInput :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) EnchantInput
+getInput = ffi ["core", ""] "core.input;"
+
 getWidth :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
 getWidth = ffi ["core", ""] "core.width;"
 
