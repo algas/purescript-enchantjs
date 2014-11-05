@@ -9,24 +9,24 @@ import Data.Maybe
 newSurface :: forall eff. Number -> Number -> Eff (e :: Enchant | eff) EnchantSurface
 newSurface = ffi ["width", "height", ""] "new enchant.Surface(width, height);"
 
-load :: forall eff. String -> Unit -> (Maybe Unit) -> Eff (e :: Enchant | eff) EnchantSurface
+load :: forall eff. String -> Eff (e :: Enchant | eff) Unit -> Eff (e :: Enchant | eff) (Maybe Unit) -> Eff (e :: Enchant | eff) EnchantSurface
 load = ffi ["src", "callback", "onerror", ""] "new enchant.Surface.load(src, callback, onerror);"
 
 
 class Surface a where
     -- getContext :: forall eff. a -> Eff (e :: Enchant | eff) EnchantCanvasContext
     -- setContext :: forall eff. a -> EnchantCanvasContext -> Eff (e :: Enchant | eff) Unit
-    getWidth :: a -> Number
+    getWidth :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setWidth :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getHeight :: a -> Number
+    getHeight :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setHeight :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
     clear :: forall eff. a -> Eff (e :: Enchant | eff) Unit
-    clone :: a -> a
+    clone :: forall eff. a -> Eff (e :: Enchant | eff) a
     draw :: forall eff. a -> a -> Eff (e :: Enchant | eff) Unit
-    getPixel :: a -> [Number]
+    getPixel :: forall eff. a -> Eff (e :: Enchant | eff) [Number]
     setPixel :: forall eff. a -> Number -> Number -> Number -> Number -> Number -> Number -> Eff (e :: Enchant | eff) Unit
-    toDataURL :: a -> String
+    toDataURL :: forall eff. a -> Eff (e :: Enchant | eff) String
 
 
 instance surfaceSelf :: Surface EnchantSurface where

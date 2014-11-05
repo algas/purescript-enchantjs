@@ -22,13 +22,13 @@ unbind = fpi ["base", "inputSource", ""] "base.unbind(inputSource);"
 
 
 class InputManager a where
-    getBroadcastTarget :: a -> String -> EnchantEventTarget
+    getBroadcastTarget :: forall eff. a -> String -> Eff (e :: Enchant | eff) EnchantEventTarget
     setBroadcastTarget :: forall eff. a -> String -> EnchantEventTarget -> Eff (e :: Enchant | eff) Unit
-    getBroadcastTargets :: a -> [EnchantEventTarget]
+    getBroadcastTargets :: forall eff. a -> Eff (e :: Enchant | eff) [EnchantEventTarget]
     setBroadcastTargets :: forall eff. a -> [EnchantEventTarget] -> Eff (e :: Enchant | eff) Unit
-    getSource :: a -> EnchantSource
+    getSource :: forall eff. a -> Eff (e :: Enchant | eff) EnchantSource
     setSource :: forall eff. a -> EnchantSource -> Eff (e :: Enchant | eff) Unit
-    getValueStore :: a -> EnchantValueStore
+    getValueStore :: forall eff. a -> Eff (e :: Enchant | eff) EnchantValueStore
     setValueStore :: forall eff. a -> EnchantValueStore -> Eff (e :: Enchant | eff) Unit
 
     addBroadcastTarget :: forall eff. a -> EnchantEventTarget -> Eff (e :: Enchant | eff) Unit

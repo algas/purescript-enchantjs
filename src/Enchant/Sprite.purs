@@ -11,9 +11,9 @@ newSprite = ffi ["width", "height", ""] "new enchant.Sprite(width, height);"
 
 
 class Sprite a where
-    getFrame :: a -> [Number]
+    getFrame :: forall eff. a -> Eff (e :: Enchant | eff) [Number]
     setFrame :: forall eff. a -> [Number] -> Eff (e :: Enchant | eff) Unit
-    getImage :: a -> [Number]
+    getImage :: forall eff. a -> Eff (e :: Enchant | eff) [Number]
     setImage :: forall eff. a -> EnchantSurface -> Eff (e :: Enchant | eff) Unit
     getTimeline :: forall eff. a -> Eff (e :: Enchant | eff) EnchantTimeline
 

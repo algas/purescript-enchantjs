@@ -11,18 +11,18 @@ newGroup = ffi [""] "new enchant.Group();"
 
 
 class Group a where
-    getChildNodes :: forall n. (Node n) => a -> [n]
-    getFirstChild :: forall n. (Node n) => a -> n
-    getLastChild :: forall n. (Node n) => a -> n
-    getOriginX :: a -> Number
+    getChildNodes :: forall eff n. (Node n) => a -> Eff (e :: Enchant | eff) [n]
+    getFirstChild :: forall eff n. (Node n) => a -> Eff (e :: Enchant | eff) n
+    getLastChild :: forall eff n. (Node n) => a -> Eff (e :: Enchant | eff) n
+    getOriginX :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setOriginX :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getOriginY :: a -> Number
+    getOriginY :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setOriginY :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getRotation :: a -> Number
+    getRotation :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setRotation :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getScaleX :: a -> Number
+    getScaleX :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setScaleX :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getScaleY :: a -> Number
+    getScaleY :: forall eff. a -> Eff (e :: Enchant | eff) Number
     setScaleY :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
     addChild :: forall eff n. (Node n) => a -> n -> Eff (e :: Enchant | eff) Unit
     insertBefore :: forall eff n. (Node n) => a -> n -> n -> Eff (e :: Enchant | eff) Unit
