@@ -12,17 +12,17 @@ newMap = ffi ["tileWidth", "tileHeight", ""] "new enchant.Map(tileWidth, tileHei
 
 
 class TileMap a where
-    getCollisionData :: forall eff. a -> Eff (e :: Enchant | eff) [[Number]]
+    getCollisionData :: a -> [[Number]]
     setCollisionData :: forall eff. a -> [[Number]] -> Eff (e :: Enchant | eff) Unit
     getImage :: forall eff. a -> Eff (e :: Enchant | eff) EnchantSurface
     setImage :: forall eff. a -> EnchantSurface -> Eff (e :: Enchant | eff) Unit
-    getTileHeight :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getTileHeight :: a -> Number
     setTileHeight :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getTileWidth :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getTileWidth :: a -> Number
     setTileWidth :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
     checkTile :: forall eff. a -> Number -> Number -> Eff (e :: Enchant | eff) EnchantTileData
-    hitTest :: forall eff. a -> Number -> Number -> Eff (e :: Enchant | eff) Boolean
+    hitTest :: a -> Number -> Number -> Boolean
     loadData :: forall eff. a -> [[Number]] -> Eff (e :: Enchant | eff) Unit
 
 

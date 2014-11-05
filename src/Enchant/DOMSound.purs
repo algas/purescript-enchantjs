@@ -13,11 +13,11 @@ load = ffi ["src", "type", "callback", "onerror", ""] "enchant.DOMSound.load(src
 
 
 class DOMSound a where
-    getCurrentTime :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getCurrentTime :: a -> Number
     setCurrentTime :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getDuration :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getDuration :: a -> Number
     setDuration :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getVolume :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getVolume :: a -> Number
     setVolume :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
     clone :: forall eff. a -> Eff (e :: Enchant | eff) Unit

@@ -12,9 +12,9 @@ newCanvasLayer = ffi [""] "new enchant.CanvasLayer();"
 
 
 class CanvasLayer a where
-    getWidth :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getWidth :: a -> Number
     setWidth :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getHeight :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getHeight :: a -> Number
     setHeight :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
 

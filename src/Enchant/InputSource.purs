@@ -10,7 +10,7 @@ newInputSource = ffi ["identifier", ""] "new enchant.InputSource(identifier);"
 
 
 class InputSource a where
-    getIdentifier :: forall eff. a -> Eff (e :: Enchant | eff) String
+    getIdentifier :: a -> String
     notifyStateChange :: forall eff. a -> EnchantData -> Eff (e :: Enchant | eff) Unit
 
 

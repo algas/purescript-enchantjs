@@ -9,43 +9,43 @@ newEntity = ffi [""] "new enchant.Entity();"
 
 
 class Entity a where
-    getBackgroundColor :: forall eff. a -> Eff (e :: Enchant | eff) String
+    getBackgroundColor :: a -> String
     setBackgroundColor :: forall eff. a -> String -> Eff (e :: Enchant | eff) Unit
-    getButtonMode :: forall eff. a -> Eff (e :: Enchant | eff) String
+    getButtonMode :: a -> String
     setButtonMode :: forall eff. a -> String -> Eff (e :: Enchant | eff) Unit
-    getButtonPressed :: forall eff. a -> Eff (e :: Enchant | eff) Boolean
+    getButtonPressed :: a -> Boolean
     setButtonPressed :: forall eff. a -> Boolean -> Eff (e :: Enchant | eff) Unit
-    getCompositeOperation :: forall eff. a -> Eff (e :: Enchant | eff) String
+    getCompositeOperation :: a -> String
     setCompositeOperation :: forall eff. a -> String -> Eff (e :: Enchant | eff) Unit
-    getDebugColor :: forall eff. a -> Eff (e :: Enchant | eff) String
+    getDebugColor :: a -> String
     setDebugColor :: forall eff. a -> String -> Eff (e :: Enchant | eff) Unit
-    getHeight :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getHeight :: a -> Number
     setHeight :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getOpacity :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getOpacity :: a -> Number
     setOpacity :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getOriginX :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getOriginX :: a -> Number
     setOriginX :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getOriginY :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getOriginY :: a -> Number
     setOriginY :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getRotation :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getRotation :: a -> Number
     setRotation :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getScaleX :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getScaleX :: a -> Number
     setScaleX :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getScaleY :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getScaleY :: a -> Number
     setScaleY :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getTouchEnabled :: forall eff. a -> Eff (e :: Enchant | eff) Boolean
+    getTouchEnabled :: a -> Boolean
     setTouchEnabled :: forall eff. a -> Boolean -> Eff (e :: Enchant | eff) Unit
-    getVisible :: forall eff. a -> Eff (e :: Enchant | eff) Boolean
+    getVisible :: a -> Boolean
     setVisible :: forall eff. a -> Boolean -> Eff (e :: Enchant | eff) Unit
-    getWidth :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getWidth :: a -> Number
     setWidth :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
     disableCollection :: forall eff. a -> Eff (e :: Enchant | eff) Unit
     enableCollection :: forall eff. a -> Eff (e :: Enchant | eff) Unit
-    intersect :: forall eff. a -> a -> Eff (e :: Enchant | eff) Boolean
+    intersect :: a -> a -> Boolean
     rotate :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
     scale :: forall eff. a -> Number -> Number -> Eff (e :: Enchant | eff) Unit
-    within :: forall eff. a -> a -> Number -> Eff (e :: Enchant | eff) Boolean
+    within :: a -> a -> Number -> Boolean
 
 
 instance entitySelf :: Entity EnchantEntity where

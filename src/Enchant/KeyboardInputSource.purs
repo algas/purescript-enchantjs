@@ -9,7 +9,7 @@ import Enchant.InputSource (InputSource)
 newKeyboardInputSource :: forall eff. String -> Eff (e :: Enchant | eff) EnchantKeyboardInputSource
 newKeyboardInputSource = ffi ["keyCode", ""] "new enchant.KeyboardInputSource(keyCode);"
 
-getKeyCode :: forall eff. EnchantKeyboardInputManager -> Eff (e :: Enchant | eff) String
+getKeyCode :: EnchantKeyboardInputManager -> String
 getKeyCode = ffi ["keyCode", ""] "base.keyCode;"
 
 setKeyCode :: forall eff. EnchantKeyboardInputManager -> String -> Eff (e :: Enchant | eff) Unit

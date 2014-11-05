@@ -8,16 +8,16 @@ import Enchant.EventTarget (EventTarget)
 newWebAudioSound :: forall eff. Eff (e :: Enchant | eff) EnchantWebAudioSound
 newWebAudioSound = ffi [""] "new enchant.DOMSound();"
 
-load :: forall eff. String -> String -> Eff (e :: Enchant | eff) Unit -> Eff (e :: Enchant | eff) Unit -> Eff (e :: Enchant | eff) EnchantDOMSound
+load :: forall eff. String -> String -> Unit -> Unit -> Eff (e :: Enchant | eff) EnchantDOMSound
 load = ffi ["src", "type", "callback", "onerror", ""] "enchant.DOMSound.load(src, type, callback, onerror);"
 
 
 class WebAudioSound a where
-    getCurrentTime :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getCurrentTime :: a -> Number
     setCurrentTime :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getDuration :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getDuration :: a -> Number
     setDuration :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getVolume :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getVolume :: a -> Number
     setVolume :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
     clone :: forall eff. a -> Eff (e :: Enchant | eff) Unit

@@ -7,163 +7,163 @@ import Enchant.Base
 newEvent :: forall eff. String -> Eff (e :: Enchant | eff) EnchantEvent
 newEvent = ffi ["type", ""] "new enchant.Event(type);"
 
-aButtonDown :: forall eff. Eff (e :: Enchant | eff) String
+aButtonDown :: String
 aButtonDown = ffi [""] "enchant.Event.A_BUTTON_DOWN;"
 
-aButtonUp :: forall eff. Eff (e :: Enchant | eff) String
+aButtonUp :: String
 aButtonUp = ffi [""] "enchant.Event.A_BUTTON_UP;"
 
-actionAdded :: forall eff. Eff (e :: Enchant | eff) String
+actionAdded :: String
 actionAdded = ffi [""] "enchant.Event.ACTION_ADDED;"
 
-actionEnd :: forall eff. Eff (e :: Enchant | eff) String
+actionEnd :: String
 actionEnd = ffi [""] "enchant.Event.ACTION_END;"
 
-actionRemoved :: forall eff. Eff (e :: Enchant | eff) String
+actionRemoved :: String
 actionRemoved = ffi [""] "enchant.Event.ACTION_REMOVED;"
 
-actionStart :: forall eff. Eff (e :: Enchant | eff) String
+actionStart :: String
 actionStart = ffi [""] "enchant.Event.ACTION_START;"
 
-actionTick :: forall eff. Eff (e :: Enchant | eff) String
+actionTick :: String
 actionTick = ffi [""] "enchant.Event.ACTION_TICK;"
 
-added :: forall eff. Eff (e :: Enchant | eff) String
+added :: String
 added = ffi [""] "enchant.Event.ADDED;"
 
-addedToScene :: forall eff. Eff (e :: Enchant | eff) String
+addedToScene :: String
 addedToScene = ffi [""] "enchant.Event.ADDED_TO_SCENE;"
 
-addedToTimeline :: forall eff. Eff (e :: Enchant | eff) String
+addedToTimeline :: String
 addedToTimeline = ffi [""] "enchant.Event.ADDED_TO_TIMELINE;"
 
-animationEnd :: forall eff. Eff (e :: Enchant | eff) String
+animationEnd :: String
 animationEnd = ffi [""] "enchant.Event.ANIMATION_END;"
 
-bButtonDown :: forall eff. Eff (e :: Enchant | eff) String
+bButtonDown :: String
 bButtonDown = ffi [""] "enchant.Event.B_BUTTON_DOWN;"
 
-bButtonUp :: forall eff. Eff (e :: Enchant | eff) String
+bButtonUp :: String
 bButtonUp = ffi [""] "enchant.Event.B_BUTTON_UP;"
 
-childAdded :: forall eff. Eff (e :: Enchant | eff) String
+childAdded :: String
 childAdded = ffi [""] "enchant.Event.CHILD_ADDED;"
 
-childRemoved :: forall eff. Eff (e :: Enchant | eff) String
+childRemoved :: String
 childRemoved = ffi [""] "enchant.Event.CHILD_REMOVED;"
 
-coreResize :: forall eff. Eff (e :: Enchant | eff) String
+coreResize :: String
 coreResize = ffi [""] "enchant.Event.CORE_RESIZE;"
 
-downButtonDown :: forall eff. Eff (e :: Enchant | eff) String
+downButtonDown :: String
 downButtonDown = ffi [""] "enchant.Event.DOWN_BUTTON_DOWN;"
 
-downButtonUp :: forall eff. Eff (e :: Enchant | eff) String
+downButtonUp :: String
 downButtonUp = ffi [""] "enchant.Event.DOWN_BUTTON_UP;"
 
-enter :: forall eff. Eff (e :: Enchant | eff) String
+enter :: String
 enter = ffi [""] "enchant.Event.ENTER;"
 
-enterFrame :: forall eff. Eff (e :: Enchant | eff) String
+enterFrame :: String
 enterFrame = ffi [""] "enchant.Event.ENTER_FRAME;"
 
 -- error :: forall eff. Eff (e :: Enchant | eff) Unit
 -- error = ffi [""] "enchant.Event.ERROR;"
 
-exit :: forall eff. Eff (e :: Enchant | eff) String
+exit :: String
 exit = ffi [""] "enchant.Event.EXIT;"
 
-exitFrame :: forall eff. Eff (e :: Enchant | eff) String
+exitFrame :: String
 exitFrame = ffi [""] "enchant.Event.EXIT_FRAME;"
 
-inputChange :: forall eff. Eff (e :: Enchant | eff) String
+inputChange :: String
 inputChange = ffi [""] "enchant.Event.INPUT_CHANGE;"
 
-inputEnd :: forall eff. Eff (e :: Enchant | eff) String
+inputEnd :: String
 inputEnd = ffi [""] "enchant.Event.INPUT_END;"
 
-inputStart :: forall eff. Eff (e :: Enchant | eff) String
+inputStart :: String
 inputStart = ffi [""] "enchant.Event.INPUT_START;"
 
-inputStateChanged :: forall eff. Eff (e :: Enchant | eff) String
+inputStateChanged :: String
 inputStateChanged = ffi [""] "enchant.Event.INPUT_STATE_CHANGED;"
 
-leftButtonDown :: forall eff. Eff (e :: Enchant | eff) String
+leftButtonDown :: String
 leftButtonDown = ffi [""] "enchant.Event.LEFT_BUTTON_DOWN;"
 
-leftButtonUp :: forall eff. Eff (e :: Enchant | eff) String
+leftButtonUp :: String
 leftButtonUp = ffi [""] "enchant.Event.LEFT_BUTTON_UP;"
 
-load :: forall eff. Eff (e :: Enchant | eff) String
+load :: String
 load = ffi [""] "enchant.Event.LOAD;"
 
-getLocalX :: forall eff. EnchantEvent -> Eff (e :: Enchant | eff) Number
+getLocalX :: EnchantEvent -> Number
 getLocalX = ffi ["event", ""] "event.localX;"
 
 setLocalX :: forall eff. EnchantEvent -> Number -> Eff (e :: Enchant | eff) Unit
 setLocalX = fpi ["event", "x", ""] "event.localX = x;"
 
-getLocalY :: forall eff. EnchantEvent -> Eff (e :: Enchant | eff) Number
+getLocalY :: EnchantEvent -> Number
 getLocalY = ffi ["event", ""] "event.localY;"
 
 setLocalY :: forall eff. EnchantEvent -> Number -> Eff (e :: Enchant | eff) Unit
 setLocalY = fpi ["event", "y", ""] "event.localY = y;"
 
-progress :: forall eff. Eff (e :: Enchant | eff) String
+progress :: String
 progress = ffi [""] "enchant.Event.PROGRESS;"
 
-removed :: forall eff. Eff (e :: Enchant | eff) String
+removed :: String
 removed = ffi [""] "enchant.Event.REMOVED;"
 
-removedFromScene :: forall eff. Eff (e :: Enchant | eff) String
+removedFromScene :: String
 removedFromScene = ffi [""] "enchant.Event.REMOVED_FROM_SCENE;"
 
-removedFromTimeline :: forall eff. Eff (e :: Enchant | eff) String
+removedFromTimeline :: String
 removedFromTimeline = ffi [""] "enchant.Event.REMOVED_FROM_TIMELINE;"
 
-render :: forall eff. Eff (e :: Enchant | eff) String
+render :: String
 render = ffi [""] "enchant.Event.RENDER;"
 
-rightButtonDown :: forall eff. Eff (e :: Enchant | eff) String
+rightButtonDown :: String
 rightButtonDown = ffi [""] "enchant.Event.RIGHT_BUTTON_DOWN;"
 
-rightButtonUp :: forall eff. Eff (e :: Enchant | eff) String
+rightButtonUp :: String
 rightButtonUp = ffi [""] "enchant.Event.RIGHT_BUTTON_UP;"
 
-getTarget :: forall eff. EnchantEvent -> Eff (e :: Enchant | eff) EnchantEventTarget
+getTarget :: EnchantEvent -> EnchantEventTarget
 getTarget = ffi ["event", ""] "event.target;"
 
 setTarget :: forall eff. EnchantEvent -> EnchantEventTarget -> Eff (e :: Enchant | eff) Unit
 setTarget = ffi ["event", "target", ""] "event.target = target;"
 
-touchEnd :: forall eff. Eff (e :: Enchant | eff) String
+touchEnd :: String
 touchEnd = ffi [""] "enchant.Event.TOUCH_END;"
 
-touchMove :: forall eff. Eff (e :: Enchant | eff) String
+touchMove :: String
 touchMove = ffi [""] "enchant.Event.TOUCH_MOVE;"
 
-touchStart :: forall eff. Eff (e :: Enchant | eff) String
+touchStart :: String
 touchStart = ffi [""] "enchant.Event.TOUCH_START;"
 
-getType :: forall eff. EnchantEvent -> Eff (e :: Enchant | eff) String
+getType :: EnchantEvent -> String
 getType = ffi ["event", ""] "event.type;"
 
 setType :: forall eff. EnchantEvent -> String -> Eff (e :: Enchant | eff) Unit
 setType = ffi ["event", "type", ""] "event.type = type;"
 
-upButtonDown :: forall eff. Eff (e :: Enchant | eff) String
+upButtonDown :: String
 upButtonDown = ffi [""] "enchant.Event.UP_BUTTON_DOWN;"
 
-upButtonUp :: forall eff. Eff (e :: Enchant | eff) String
+upButtonUp :: String
 upButtonUp = ffi [""] "enchant.Event.UP_BUTTON_UP;"
 
-getX :: forall eff. EnchantEvent -> Eff (e :: Enchant | eff) Number
+getX :: EnchantEvent -> Number
 getX = ffi ["event", ""] "event.x;"
 
 setX :: forall eff. EnchantEvent -> Number -> Eff (e :: Enchant | eff) Unit
 setX = fpi ["event", "x", ""] "event.x = x;"
 
-getY :: forall eff. EnchantEvent -> Eff (e :: Enchant | eff) Number
+getY :: EnchantEvent -> Number
 getY = ffi ["event", ""] "event.y;"
 
 setY :: forall eff. EnchantEvent -> Number -> Eff (e :: Enchant | eff) Unit

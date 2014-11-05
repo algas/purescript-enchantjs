@@ -23,13 +23,13 @@ getRootScene = ffi ["core", ""] "core.rootScene;"
 getAsset :: forall eff. EnchantCore -> String -> Eff (e :: Enchant | eff) EnchantSurface
 getAsset = ffi ["core", "sprite", ""] "core.assets[sprite];"
 
-getFps :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
+getFps :: EnchantCore -> Number
 getFps = ffi ["core", ""] "core.fps;"
 
 setFps :: forall eff. EnchantCore -> Number -> Eff (e :: Enchant | eff) Unit
 setFps = fpi ["core", "n", ""] "core.fps = n;"
 
-getFrame :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
+getFrame :: EnchantCore -> Number
 getFrame = ffi ["core", ""] "core.frame;"
 
 setFrame :: forall eff. EnchantCore -> Number -> Eff (e :: Enchant | eff) Unit
@@ -41,35 +41,35 @@ getInput = ffi ["core", ""] "core.input;"
 getInputAttr :: forall eff. EnchantCore -> String -> Eff (e :: Enchant | eff) Boolean
 getInputAttr = ffi ["core", "key"] "core.input[key];"
 
-getWidth :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
+getWidth :: EnchantCore -> Number
 getWidth = ffi ["core", ""] "core.width;"
 
 setWidth :: forall eff. EnchantCore -> Number -> Eff (e :: Enchant | eff) Unit
 setWidth = fpi ["core", "n", ""] "core.width = n;"
 
-getHeight :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
+getHeight :: EnchantCore -> Number
 getHeight = ffi ["core", ""] "core.height;"
 
 setHeight :: forall eff. EnchantCore -> Number -> Eff (e :: Enchant | eff) Unit
 setHeight = fpi ["core", "n", ""] "core.height = n;"
 
-getScale :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
+getScale :: EnchantCore -> Number
 getScale = ffi ["core", ""] "core.scale;"
 
 setScale :: forall eff. EnchantCore -> Number -> Eff (e :: Enchant | eff) Unit
 setScale = fpi ["core", "n", ""] "core.scale = n;"
 
-getReady :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Boolean
+getReady :: EnchantCore -> Boolean
 getReady = ffi ["core", ""] "core.ready;"
 
-getRunning :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Boolean
+getRunning :: EnchantCore -> Boolean
 getRunning = ffi ["core", ""] "core.running;"
 
 
 debug :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Unit
 debug = fpi ["core", ""] "core.debug();"
 
-getElapsedTime :: forall eff. EnchantCore -> Eff (e :: Enchant | eff) Number
+getElapsedTime :: EnchantCore -> Number
 getElapsedTime = ffi ["core", ""] "core.getElapsedTime();"
 
 keybind :: forall eff. EnchantCore -> Number -> String -> Eff (e :: Enchant | eff) Unit

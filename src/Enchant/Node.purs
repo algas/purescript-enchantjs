@@ -10,13 +10,13 @@ newNode = ffi [""] "new enchant.Node();"
 
 
 class Node a where
-    getAge :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getAge :: a -> Number
     setAge :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getParentNode :: forall eff. a -> Eff (e :: Enchant | eff) EnchantGroup
-    getScene :: forall eff. a -> Eff (e :: Enchant | eff) EnchantScene
-    getX :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getParentNode :: forall eff. a -> EnchantGroup
+    getScene :: forall eff. a -> EnchantScene
+    getX :: a -> Number
     setX :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
-    getY :: forall eff. a -> Eff (e :: Enchant | eff) Number
+    getY :: a -> Number
     setY :: forall eff. a -> Number -> Eff (e :: Enchant | eff) Unit
 
     moveBy :: forall eff. a -> Number -> Number -> Eff (e :: Enchant | eff) Unit
